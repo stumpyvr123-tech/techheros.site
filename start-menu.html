@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Menu Navigation</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            
+
+            margin-bottom: 100%;
+
+            
+    background-image: url('Untitled design.png'); 
+    
+    background-repeat: no-repeat; 
+    
+    background-size: cover; 
+    
+    background-position: center; 
+    
+    background-attachment: fixed; 
+
+
+        }
+
+        .start-menu {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .frutiger-button {
+  cursor: pointer;
+  position: relative;
+  padding: 2px;
+  border-radius: 6px;
+  border: 0;
+  text-shadow: 1px 1px #000a;
+  background: linear-gradient(#006caa, #00c3ff);
+  box-shadow: 0px 4px 6px 0px #0008;
+  transition: 0.3s all;
+}
+
+.frutiger-button:hover {
+  box-shadow: 0px 6px 12px 0px #0009;
+}
+
+.frutiger-button:active {
+  box-shadow: 0px 0px 0px 0px #0000;
+}
+
+.inner {
+  position: relative;
+  inset: 0px;
+  padding: 1em;
+  border-radius: 4px;
+  background: radial-gradient(circle at 50% 100%, #30f8f8 10%, #30f8f800 55%),
+    linear-gradient(#00526a, #009dcd);
+  overflow: hidden;
+  transition: inherit;
+}
+
+.inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-65deg, #0000 40%, #fff7 50%, #0000 70%);
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  animation: thing 3s ease infinite;
+}
+
+@keyframes thing {
+  0% {
+    background-position: 130%;
+    opacity: 1;
+  }
+
+  to {
+    background-position: -166%;
+    opacity: 0;
+  }
+}
+
+.top-white {
+  position: absolute;
+  border-radius: inherit;
+  inset: 0 -8em;
+  background: radial-gradient(
+    circle at 50% -270%,
+    #fff 45%,
+    #fff6 60%,
+    #fff0 60%
+  );
+  transition: inherit;
+}
+
+.inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  transition: inherit;
+  box-shadow: inset 0px 2px 8px -2px #0000;
+}
+
+.frutiger-button:active .inner::after {
+  box-shadow: inset 0px 2px 8px -2px #000a;
+}
+
+.text {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-weight: 550;
+  transition: inherit;
+}
+
+
+        </style>
+    
+  </div>
+</button>
+
+
+
+        
+<div class="vista-apps-container">
+  <div class="vista-apps-grid" id="appsGrid">
+    <div>
+
+        <h3>Important</h3>
+    
+    <button  onclick="window.location.href='guides.html';" class="custom-app-btn">Guides</button>
+    <button onclick="window.location.href='news.html';" class="custom-app-btn">News</button>
+    <button onclick="window.location.href='reviews.html';" class="custom-app-btn">Reviews</button>
+    <button onclick="window.location.href='info.html';" class="custom-app-btn">Site Information</button>
+  </div>
+
+ <div> 
+
+    <h3>Notices</h3>
+   <button onclick="window.location.href='disclaimer.html';" class="custom-app-btn">Disclaimer</button> 
+   <button onclick="window.location.href='TOS.html';" class="custom-app-btn">Terms of service</button>
+   
+</div>
+
+
+
+
+</div>
+</div>
+
+
+<style>
+  :root {
+    --grid-width: 440px;
+    --grid-height: 540px;
+    --grid-padding: 16px;
+    --grid-columns: repeat(3, 1fr);
+    --grid-gap: 12px;
+    --border-radius: 6px;
+
+    --glass-bg: rgba(10, 22, 35, 0.78);
+    --glass-blur: 16px;
+    --glass-border: rgba(255, 255, 255, 0.25);
+
+    --btn-bg-top: #e8f5fd;
+    --btn-bg-bottom: #cfeafb;
+    --btn-border: #7ecbfe;
+    --btn-text-color: #1a1a1a;
+    --btn-font-size: 13px;
+  }
+
+  .vista-apps-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--grid-width);
+    height: var(--grid-height);
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    padding: var(--grid-padding);
+    box-sizing: border-box;
+    z-index: 99999;
+    overflow-y: auto;
+  }
+
+  .vista-apps-grid {
+    display: grid;
+    grid-template-columns: var(--grid-columns);
+    gap: var(--grid-gap);
+    width: 100%;
+  }
+
+  .custom-app-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: var(--btn-font-size);
+    font-weight: 500;
+    color: var(--btn-text-color);
+    background: linear-gradient(to bottom, var(--btn-bg-top), var(--btn-bg-bottom));
+    border: 1px solid var(--btn-border);
+    outline: none;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    transition: filter 0.1s ease;
+  }
+
+  .custom-app-btn:hover {
+    filter: brightness(1.1);
+  }
+
+  .custom-app-btn:active {
+    filter: brightness(0.95);
+  }
+</style>
+
+</body>
+</html>
