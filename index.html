@@ -20,10 +20,14 @@
 <body>
 
 
+
+
+
   <style>
     html,
     body {
-      overflow: hidden;
+      overflow-x: hidden;
+      text-align: center;
     }
 
     body {
@@ -286,17 +290,43 @@
       color: white;
       font-weight: 550;
     }
+
+
+    .rgnam {
+      margin: 0.75rem auto 1rem;
+      padding: 0 1rem;
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+    }
+
+    .hero-image {
+      display: block;
+      width: min(600px, 80vw);
+      max-height: 36vh;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+    .explore {
+      margin: 1rem auto 0;
+      padding: 0 1rem 1.5rem;
+    }
+
+    .explore h1 {
+      margin: 0 0 0.85rem;
+    }
+
+    .explore .frutiger-button {
+      margin: 0.3rem;
+    }
   </style>
 
-
-  <h1 class="welcome">Welcome to Tech Hero!</h1>
-  <p class="best-news">Discover the best tech news!</p>
-  <p class="best-guides">Find the best tech guides!</p>
-  <p class="best-reviews">Read the best tech reviews!</p>
+  <div></div>
+  <h1 style="text-align: center;">Tech Hero</h1>
+  <h2 class="rgnam">Reviews, guides, news, and more!</h2>
 
 
 
-
+  <img class="hero-image" src="Tech Hero.png" alt="Tech Hero">
 
 
   <div class="explore">
