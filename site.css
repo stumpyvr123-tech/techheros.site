@@ -18,19 +18,16 @@ body.site-page {
 }
 
 .site-page > h1 {
-.site-page > h1 {
   text-align: center;
   color: rgb(5, 64, 143) !important;
 }
 
-.site-page > p {
 .site-page > p {
   max-width: 900px;
   margin: 1rem auto;
   line-height: 1.6;
 }
 
-.site-page > .back-button {
 .site-page > .back-button {
   display: block;
   width: fit-content;
@@ -120,6 +117,7 @@ body.site-page {
     padding: 1rem;
   }
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Oswald:wght@200..700&display=swap');
 
 html {
