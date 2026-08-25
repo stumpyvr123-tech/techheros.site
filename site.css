@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Oswald:wght@200..700&display=swap');
+html,
+body {
+  min-height: 100%;
+}
+body.site-page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  margin: 0;
+  padding: clamp(1rem, 4vw, 3rem);
+  color: rgb(5, 64, 143) !important;
+  font-family: 'Montserrat', sans-serif !important;
+  background: #16b8cf url('Untitled%20design.png') center center / cover no-repeat fixed !important;
+}
+.site-page > h1,
+.site-page > p {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.site-page > h1 {
+.site-page > h1 {
+  text-align: center;
+  color: rgb(5, 64, 143) !important;
+}
+
+.site-page > p {
+.site-page > p {
+  max-width: 900px;
+  margin: 1rem auto;
+  line-height: 1.6;
+}
+
+.site-page > .back-button {
+.site-page > .back-button {
+  display: block;
+  width: fit-content;
+  margin: 1.5rem auto 0;
+}
+
+.site-page .frutiger-button,
+.site-page .frutiger-button,
+.site-page .custom-app-btn {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding: 2px;
+  border-radius: 6px;
+  border: 0;
+  text-decoration: none;
+  text-shadow: 1px 1px #000a;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 0.63em;
+  background: linear-gradient(#006caa, #00c3ff) !important;
+  box-shadow: 0px 4px 6px 0px #0008;
+}
+.site-page .frutiger-button:hover,
+.site-page .custom-app-btn:hover {
+  box-shadow: 0px 6px 12px 0px #0009;
+}
+
+.site-page .frutiger-button:active,
+.site-page .frutiger-button:active,
+.site-page .custom-app-btn:active {
+  box-shadow: 0px 0px 0px 0px #0000;
+}
+
+.site-page .frutiger-button .inner,
+.site-page .frutiger-button .inner,
+.site-page .custom-app-btn .inner {
+  position: relative;
+  inset: 0px;
+  padding: 1em;
+  border-radius: 4px;
+  background: radial-gradient(circle at 50% 100%, #30f8f8 10%, #30f8f800 55%),
+    linear-gradient(#00526a, #009dcd) !important;
+  overflow: hidden;
+}
+.site-page .frutiger-button .inner::before,
+.site-page .custom-app-btn .inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-65deg, #0000 40%, #fff7 50%, #0000 70%);
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+}
+.site-page .frutiger-button .top-white,
+.site-page .custom-app-btn .top-white {
+  position: absolute;
+  border-radius: inherit;
+  inset: 0 -8em;
+  background: radial-gradient(circle at 50% -270%, #fff 45%, #fff6 60%, #fff0 60%);
+}
+
+.site-page .frutiger-button .inner::after,
+.site-page .frutiger-button .inner::after,
+.site-page .custom-app-btn .inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0px 2px 8px -2px #0000;
+}
+.site-page .frutiger-button:active .inner::after,
+.site-page .custom-app-btn:active .inner::after {
+  box-shadow: inset 0px 2px 8px -2px #000a;
+}
+
+.site-page .frutiger-button .text,
+.site-page .frutiger-button .text,
+.site-page .custom-app-btn .text {
+  position: relative;
+  z-index: 1;
+  color: white !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 550;
+}
+@media (max-width: 600px) {
+  body.site-page {
+    padding: 1rem;
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Oswald:wght@200..700&display=swap');
+
+html {
+  min-height: 100%;
+}
+
+body.site-page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  margin: 0;
+  padding: clamp(1rem, 4vw, 3rem);
+  color: #073653;
+  font-family: 'Montserrat', sans-serif;
+  background: #16b8cf url('Untitled%20design.png') center center / cover fixed !important;
+}
+
+.site-page > h1,
+.site-page > p {
+  max-width: 900px;
+  margin: 0 auto 1rem;
+  padding: 1rem 1.25rem;
+  box-sizing: border-box;
+  background: rgba(235, 250, 255, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 50, 90, 0.22), inset 0 1px rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px) saturate(135%);
+  -webkit-backdrop-filter: blur(12px) saturate(135%);
+}
+
+.site-page > h1 {
+  margin-top: 0;
+  color: #05408f;
+  text-align: center;
+}
+
+.site-page > p {
+  line-height: 1.6;
+}
+
+.site-page > .back-button {
+  display: block;
+  width: fit-content;
+  margin: 1.5rem auto 0;
+}
+
+.site-page .frutiger-button {
+  display: inline-block;
+  padding: 2px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  text-shadow: 1px 1px #000a;
+  background: linear-gradient(rgba(224, 248, 255, 0.7), rgba(25, 135, 205, 0.55));
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 55, 100, 0.3), inset 0 1px rgba(255, 255, 255, 0.8);
+}
+
+.site-page .frutiger-button .inner {
+  padding: 0.7rem 1.15rem;
+  background: linear-gradient(rgba(210, 245, 255, 0.42), rgba(20, 115, 180, 0.35));
+  border-radius: 4px;
+  backdrop-filter: blur(8px) saturate(135%);
+  -webkit-backdrop-filter: blur(8px) saturate(135%);
+}
+
+.site-page .frutiger-button .text {
+  color: white;
+}
+
+.site-page .frutiger-button:hover {
+  filter: brightness(1.08);
+}
+
+.site-page .frutiger-button:active {
+  filter: brightness(0.95);
+}
+
+.site-page .custom-app-btn {
+  color: #073653;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(rgba(224, 248, 255, 0.7), rgba(25, 135, 205, 0.55));
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 55, 100, 0.3), inset 0 1px rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px) saturate(135%);
+  -webkit-backdrop-filter: blur(8px) saturate(135%);
+}
+
+.site-page .custom-app-btn:hover {
+  filter: brightness(1.08);
+}
+
+.site-page .custom-app-btn:active {
+  filter: brightness(0.95);
+}
+
+.site-page .back-button .inner::before {
+  content: none;
+}
+
+@media (max-width: 600px) {
+  body.site-page {
+    padding: 1rem;
+  }
+}
