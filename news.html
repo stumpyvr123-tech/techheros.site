@@ -1,200 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>News.Home</title>
-  <link rel="stylesheet" href="site.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Oswald:wght@200..700&display=swap"
-    rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News.Home</title>
+    <link rel="stylesheet" href="site.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
-
 <body class="site-page">
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            
+
+            margin-bottom: 100%;
+
+            
+    background-image: url('Untitled%20design.png'); 
+    
+    background-repeat: no-repeat; 
+    
+    background-size: cover; 
+    
+    background-position: center; 
+    
+    background-attachment: fixed; 
 
 
-      margin-bottom: 100%;
+        }
 
+        .welcome {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin-top: 3.281723722719%;   
+            font-size: 3em;
+            color: rgb(5, 64, 143)
+        }
 
-      background-image: url('Untitled%20design.png');
+        .best-news {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin-top: 2.81723722719%;
+            font-size: 1.68em;
+            color: rgb(5, 64, 143)
+        }
 
-      background-repeat: no-repeat;
+        .best-guides {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin-top: 2.81723722719%;
+            font-size: 1.68em;
+            color: rgb(5, 64, 143)
+        }
 
-      background-size: cover;
+        .best-reviews {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin-top: 2.81723722719%;
+            font-size: 1.68em;
+            color: rgb(5, 64, 143)
+        }
 
-      background-position: center;
+        .explore {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin-top: 8.81723722719%;
+            font-size: 1.5em;
+            color: rgb(5, 64, 143);
+        }
 
-      background-attachment: fixed;
+        .guides {
+            color: red;
+            margin-left: 1.3em;
+            text-align: center;
+        }
 
+        .news {
+            color: red;
+            margin-right: 1.3em;
+            text-align: center;
+        }
 
-    }
+        .frutiger-button {
+  cursor: pointer;
+  position: relative;
+  padding: 2px;
+  border-radius: 6px;
+  border: 0;
+  text-shadow: 1px 1px #000a;
+  background: linear-gradient(#006caa, #00c3ff);
+  box-shadow: 0px 4px 6px 0px #0008;
+  transition: 0.3s all;
+}
 
-    .welcome {
-      font-family: 'Montserrat', sans-serif;
-      text-align: center;
-      margin-top: 3.281723722719%;
-      font-size: 3em;
-      color: rgb(5, 64, 143)
-    }
+.frutiger-button:hover {
+  box-shadow: 0px 6px 12px 0px #0009;
+}
 
-    .best-news {
-      font-family: 'Montserrat', sans-serif;
-      text-align: center;
-      margin-top: 2.81723722719%;
-      font-size: 1.68em;
-      color: rgb(5, 64, 143)
-    }
+.frutiger-button:active {
+  box-shadow: 0px 0px 0px 0px #0000;
+}
 
-    .best-guides {
-      font-family: 'Montserrat', sans-serif;
-      text-align: center;
-      margin-top: 2.81723722719%;
-      font-size: 1.68em;
-      color: rgb(5, 64, 143)
-    }
+.inner {
+  position: relative;
+  inset: 0px;
+  padding: 1em;
+  border-radius: 4px;
+  background: radial-gradient(circle at 50% 100%, #30f8f8 10%, #30f8f800 55%),
+    linear-gradient(#00526a, #009dcd);
+  overflow: hidden;
+  transition: inherit;
+}
 
-    .best-reviews {
-      font-family: 'Montserrat', sans-serif;
-      text-align: center;
-      margin-top: 2.81723722719%;
-      font-size: 1.68em;
-      color: rgb(5, 64, 143)
-    }
+.inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-65deg, #0000 40%, #fff7 50%, #0000 70%);
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  animation: thing 3s ease infinite;
+}
 
-    .explore {
-      font-family: 'Montserrat', sans-serif;
-      text-align: center;
-      margin-top: 8.81723722719%;
-      font-size: 1.5em;
-      color: rgb(5, 64, 143);
-    }
+@keyframes thing {
+  0% {
+    background-position: 130%;
+    opacity: 1;
+  }
 
-    .guides {
-      color: red;
-      margin-left: 1.3em;
-      text-align: center;
-    }
+  to {
+    background-position: -166%;
+    opacity: 0;
+  }
+}
 
-    .news {
-      color: red;
-      margin-right: 1.3em;
-      text-align: center;
-    }
+.top-white {
+  position: absolute;
+  border-radius: inherit;
+  inset: 0 -8em;
+  background: radial-gradient(
+    circle at 50% -270%,
+    #fff 45%,
+    #fff6 60%,
+    #fff0 60%
+  );
+  transition: inherit;
+}
 
-    .frutiger-button {
-      cursor: pointer;
-      position: relative;
-      padding: 2px;
-      border-radius: 6px;
-      border: 0;
-      text-shadow: 1px 1px #000a;
-      background: linear-gradient(#006caa, #00c3ff);
-      box-shadow: 0px 4px 6px 0px #0008;
-      transition: 0.3s all;
-    }
+.inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  transition: inherit;
+  box-shadow: inset 0px 2px 8px -2px #0000;
+}
 
-    .frutiger-button:hover {
-      box-shadow: 0px 6px 12px 0px #0009;
-    }
+.frutiger-button:active .inner::after {
+  box-shadow: inset 0px 2px 8px -2px #000a;
+}
 
-    .frutiger-button:active {
-      box-shadow: 0px 0px 0px 0px #0000;
-    }
-
-    .inner {
-      position: relative;
-      inset: 0px;
-      padding: 1em;
-      border-radius: 4px;
-      background: radial-gradient(circle at 50% 100%, #30f8f8 10%, #30f8f800 55%),
-        linear-gradient(#00526a, #009dcd);
-      overflow: hidden;
-      transition: inherit;
-    }
-
-    .inner::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(-65deg, #0000 40%, #fff7 50%, #0000 70%);
-      background-size: 200% 100%;
-      background-repeat: no-repeat;
-      animation: thing 3s ease infinite;
-    }
-
-    @keyframes thing {
-      0% {
-        background-position: 130%;
-        opacity: 1;
-      }
-
-      to {
-        background-position: -166%;
-        opacity: 0;
-      }
-    }
-
-    .top-white {
-      position: absolute;
-      border-radius: inherit;
-      inset: 0 -8em;
-      background: radial-gradient(circle at 50% -270%,
-          #fff 45%,
-          #fff6 60%,
-          #fff0 60%);
-      transition: inherit;
-    }
-
-    .inner::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      transition: inherit;
-      box-shadow: inset 0px 2px 8px -2px #0000;
-    }
-
-    .frutiger-button:active .inner::after {
-      box-shadow: inset 0px 2px 8px -2px #000a;
-    }
-
-    .text {
-      position: relative;
-      z-index: 1;
-      color: white;
-      font-weight: 550;
-      transition: inherit;
-    }
-  </style>
-
-
-  <h1 class="welcome">Latest Articles:</h1>
-
+.text {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-weight: 550;
+  transition: inherit;
+}
 
 
 
+        </style>
 
 
+        <h1 class="welcome">Latest Articles:</h1>
+        
+        
+        
+        
+        
+        
+    
 
+        </div>
 
-  </div>
-
-  <a class="frutiger-button back-button" href="index.html">
-    <div class="inner"><span class="text">Back to home</span></div>
-  </a>
-
+        <a class="frutiger-button back-button" href="index.html"><div class="inner"><span class="text">Back to home</span></div></a>
+        
 </body>
-
 </html>
