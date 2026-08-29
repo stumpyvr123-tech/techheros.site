@@ -1,0 +1,38 @@
+<!-- 1. Replace the loading text with a real button -->
+<div class="loading-container">
+  <h2>Welcome to Tech Hero Login</h2>
+  <button id="google-login-btn" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+    Sign in with Google
+  </button>
+</div>
+
+<script type="module">
+  import { initializeApp } from "https://gstatic.com";
+  import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://gstatic.com";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCs8kEJ3Q-X7KQ_S8zFGnXe9F-MIW0RQbU",
+    authDomain: "techherologin.firebaseapp.com",
+    projectId: "techherologin",
+    storageBucket: "techherologin.firebasestorage.app",
+    messagingSenderId: "154155128063",
+    appId: "1:154155128063:web:1fd853543ba66ba03d68ca"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  // 2. Attach the login flow to the button click event
+  document.getElementById("google-login-btn").addEventListener("click", () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log("Logged in!", result.user);
+        window.location.href = "dashboard.html"; 
+      })
+      .catch((error) => {
+        console.error("Auth Error:", error.message);
+        alert("Error: " + error.message);
+      });
+  });
+</script>

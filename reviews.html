@@ -5,22 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reviews | TechHero</title>
-    <link rel="stylesheet" href="site.css">
 </head>
 
 <body class="site-page">
     <div class="page-shell">
         <h1 class="page-title">Tech Reviews</h1>
 
-        <div class="1stvid">
+        <div class="video-stack">
             <div class="reviews-row">
                 <div class="review-card review-left">
-                    <h1>Macbook Neo Review </h1>
+                    <h1>Macbook Neo Review</h1>
 
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/iGeXGdYE7UE?si=KJYCiRNJMTtgdulb"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                    <div class="review-meta">
+                        <span class="review-tag">Video info</span>
+                        <p>Apple-style performance, battery life, and portability in one compact premium laptop review.</p>
+                    </div>
                 </div>
 
                 <div class="review-card review-right">
@@ -29,28 +33,55 @@
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                    <div class="review-meta">
+                        <span class="review-tag">Video info</span>
+                        <p>A practical look at affordability, flexibility, and what makes the Raspberry Pi so useful.</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="scndvd review-card review-full">
-                <h1>Google Pixel Eleven Review </h1>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/oaaOwLnuyPU?si=aiTrhN25ZVgrgtEY"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="reviews-row second-row">
+                <div class="review-card review-left">
+                    <h1>Microsoft Surface Pro Review</h1>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/mWBV0jtdcM0?si=djUO_rpr16DaYu5Z"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                    <div class="review-meta">
+                        <span class="review-tag">Video info</span>
+                        <p>A full look at the Surface Pro’s design, performance, battery life, and whether it’s a strong 2-in-1 choice.</p>
+                    </div>
+                </div>
+
+                <div class="review-card review-right">
+                    <h1>Google Pixel Eleven Review</h1>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/oaaOwLnuyPU?si=aiTrhN25ZVgrgtEY"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                    <div class="review-meta">
+                        <span class="review-tag">Video info</span>
+                        <p>Camera quality, software experience, and everyday performance tested in a full Pixel review.</p>
+                    </div>
+                </div>
             </div>
+        </div>
     </div>
 
-
-
     <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
+        body.site-page {
+            box-sizing: border-box;
             min-height: 100vh;
-            background: linear-gradient(180deg, #edf6ff 0%, #dfeef9 24%, #d0e4f4 100%);
-            color: #0f172a;
+            margin: 0;
+            padding: clamp(1rem, 4vw, 3rem);
+            color: #edf9ff;
+            font-family: 'Montserrat', sans-serif;
+            background:
+              radial-gradient(circle at top, rgba(117, 178, 226, 0.3), transparent 38%),
+              linear-gradient(180deg, #0a1721 0%, #102534 30%, #183244 100%);
         }
 
         .page-shell {
@@ -62,13 +93,13 @@
         .page-title {
             font-size: clamp(2.2rem, 4vw, 4rem);
             text-align: center;
-            color: #1f2d3d;
+            color: #edf9ff;
             text-shadow: none;
             margin-bottom: 30px;
             letter-spacing: -0.04em;
         }
 
-        .1stvid {
+        .video-stack {
             display: flex;
             flex-direction: column;
             gap: 28px;
@@ -85,20 +116,22 @@
         .review-card {
             flex: 0 0 560px;
             max-width: 560px;
-            background: rgba(255, 255, 255, 0.18);
-            border: 1px solid rgba(255, 255, 255, 0.42);
+            width: 560px;
+            background: rgba(24, 40, 52, 0.54);
+            border: 1px solid rgba(180, 214, 240, 0.18);
             border-radius: 24px;
-            box-shadow: 0 8px 26px rgba(10, 35, 58, 0.08), inset 0 1px 0 rgba(255,255,255,0.65);
-            backdrop-filter: blur(16px) saturate(120%);
-            -webkit-backdrop-filter: blur(16px) saturate(120%);
-            padding: 18px 18px 12px;
+            box-shadow: 0 8px 24px rgba(2, 9, 14, 0.22), inset 0 1px rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px) saturate(120%);
+            -webkit-backdrop-filter: blur(12px) saturate(120%);
+            padding: 18px 18px 16px;
             text-align: center;
+            box-sizing: border-box;
         }
 
         .review-card h1 {
             margin: 0 0 14px;
             font-size: clamp(1.4rem, 2vw, 2rem);
-            color: #1e2d3d;
+            color: #edf9ff;
             text-shadow: none;
             letter-spacing: -0.04em;
         }
@@ -111,25 +144,40 @@
             border-radius: 18px;
             border: none;
             box-shadow: 0 12px 22px rgba(15, 50, 74, 0.15);
+            margin-bottom: 14px;
+        }
+
+        .review-meta {
+            background: rgba(13, 26, 35, 0.34);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 12px 14px 10px;
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        .review-tag {
+            display: inline-block;
+            margin-bottom: 8px;
+            padding: 5px 9px;
+            border-radius: 999px;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #d9f3ff;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .review-meta p {
+            margin: 0;
+            color: rgba(237, 249, 255, 0.85);
+            font-size: 0.92rem;
+            line-height: 1.5;
         }
 
         .review-right {
             margin-left: auto;
-        }
-
-        .review-full {
-            margin: 0 auto;
-            max-width: 700px;
-            width: 100%;
-        }
-
-        .review-full iframe {
-            max-width: 100%;
-        }
-
-        .scndvd {
-            margin-top: 0;
-            font-size: 1em;
         }
 
         .back-button {
@@ -181,9 +229,6 @@
             font-size: 0.95rem;
         }
     </style>
-
-
-
 
     <a class="frutiger-button back-button" href="index.html">
         <div class="inner"><span class="text">Back to home</span></div>
