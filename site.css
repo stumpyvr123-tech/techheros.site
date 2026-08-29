@@ -9,9 +9,11 @@ body.site-page {
   min-height: 100vh;
   margin: 0;
   padding: clamp(1rem, 4vw, 3rem);
-  color: #073653;
+  color: #edf9ff;
   font-family: 'Montserrat', sans-serif;
-  background: #16b8cf url('Untitled%20design.png') center center / cover fixed !important;
+  background:
+    radial-gradient(circle at top, rgba(117, 178, 226, 0.3), transparent 38%),
+    linear-gradient(180deg, #0a1721 0%, #102534 30%, #183244 100%);
 }
 
 .site-page > h1,
@@ -20,22 +22,24 @@ body.site-page {
   margin: 0 auto 1rem;
   padding: 1rem 1.25rem;
   box-sizing: border-box;
-  background: rgba(235, 250, 255, 0.48);
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0, 50, 90, 0.22), inset 0 1px rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px) saturate(135%);
-  -webkit-backdrop-filter: blur(12px) saturate(135%);
+  background: rgba(24, 40, 52, 0.54);
+  border: 1px solid rgba(180, 214, 240, 0.18);
+  border-radius: 22px;
+  box-shadow: 0 8px 24px rgba(2, 9, 14, 0.22), inset 0 1px rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
 }
 
 .site-page > h1 {
   margin-top: 0;
-  color: #05408f;
+  color: #1d2d3d;
   text-align: center;
+  letter-spacing: -0.04em;
 }
 
 .site-page > p {
   line-height: 1.6;
+  color: #334d68;
 }
 
 .site-page > .back-button {
@@ -47,45 +51,56 @@ body.site-page {
 .site-page .frutiger-button {
   display: inline-block;
   padding: 2px;
-  color: white;
+  color: #edf4ff;
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
-  text-shadow: 1px 1px #000a;
-  background: linear-gradient(rgba(224, 248, 255, 0.7), rgba(25, 135, 205, 0.55));
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(0, 55, 100, 0.3), inset 0 1px rgba(255, 255, 255, 0.8);
+  background: linear-gradient(135deg, rgba(124, 190, 236, 0.35), rgba(20, 45, 62, 0.8));
+  border: 1px solid rgba(182, 216, 242, 0.34);
+  border-radius: 999px;
+  box-shadow: 0 10px 26px rgba(5, 15, 22, 0.3), inset 0 1px 0 rgba(255,255,255,0.18);
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+  animation: sleek-glow 6s ease-in-out infinite alternate;
 }
 
 .site-page .frutiger-button .inner {
-  padding: 0.7rem 1.15rem;
-  background: linear-gradient(rgba(210, 245, 255, 0.42), rgba(20, 115, 180, 0.35));
-  border-radius: 4px;
-  backdrop-filter: blur(8px) saturate(135%);
-  -webkit-backdrop-filter: blur(8px) saturate(135%);
+  position: relative;
+  padding: 0.62rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(203, 226, 245, 0.12), rgba(18, 31, 43, 0.75));
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .site-page .frutiger-button .text {
-  color: white;
+  position: relative;
+  z-index: 1;
+  color: #ebf8ff;
+  letter-spacing: 0.02em;
+  font-weight: 700;
 }
 
 .site-page .frutiger-button:hover {
-  filter: brightness(1.08);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(18, 44, 72, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .site-page .frutiger-button:active {
-  filter: brightness(0.95);
+  transform: translateY(0);
+  box-shadow: 0 5px 12px rgba(18, 44, 72, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .site-page .custom-app-btn {
-  color: #073653;
+  color: #edf4ff;
   font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(rgba(224, 248, 255, 0.7), rgba(25, 135, 205, 0.55));
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(0, 55, 100, 0.3), inset 0 1px rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(8px) saturate(135%);
-  -webkit-backdrop-filter: blur(8px) saturate(135%);
+  background: linear-gradient(135deg, rgba(124, 190, 236, 0.35), rgba(20, 45, 62, 0.8));
+  border: 1px solid rgba(182, 216, 242, 0.34);
+  border-radius: 999px;
+  box-shadow: 0 10px 26px rgba(5, 15, 22, 0.3), inset 0 1px 0 rgba(255,255,255,0.18);
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
 }
 
 .site-page .custom-app-btn:hover {

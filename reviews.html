@@ -9,27 +9,36 @@
 </head>
 
 <body class="site-page">
-    <h1>Tech Reviews</h1>
+    <div class="page-shell">
+        <h1 class="page-title">Tech Reviews</h1>
 
-    <div class="1stvid">
+        <div class="1stvid">
+            <div class="reviews-row">
+                <div class="review-card review-left">
+                    <h1>Macbook Neo Review </h1>
 
-        <h1>Macbook Neo Review </h1>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/iGeXGdYE7UE?si=KJYCiRNJMTtgdulb"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
 
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/iGeXGdYE7UE?si=KJYCiRNJMTtgdulb"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="review-card review-right">
+                    <h1>Raspberry Pi Review</h1>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/nBtOEmUqASQ?si=z-_7CuFtNX_JJj6Y"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
 
-        <div class="scndvd">
-            <h1>Google Pixel Eleven Review </h1>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/oaaOwLnuyPU?si=aiTrhN25ZVgrgtEY"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-
-
-
+            <div class="scndvd review-card review-full">
+                <h1>Google Pixel Eleven Review </h1>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/oaaOwLnuyPU?si=aiTrhN25ZVgrgtEY"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
     </div>
 
 
@@ -40,13 +49,136 @@
             margin: 0;
             padding: 0;
             min-height: 100vh;
-            background: #16b8cf url('Untitled%20design.png') center center / cover no-repeat fixed;
+            background: linear-gradient(180deg, #edf6ff 0%, #dfeef9 24%, #d0e4f4 100%);
+            color: #0f172a;
+        }
 
+        .page-shell {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 40px 24px 60px;
+        }
+
+        .page-title {
+            font-size: clamp(2.2rem, 4vw, 4rem);
+            text-align: center;
+            color: #1f2d3d;
+            text-shadow: none;
+            margin-bottom: 30px;
+            letter-spacing: -0.04em;
+        }
+
+        .1stvid {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .reviews-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            width: 100%;
+        }
+
+        .review-card {
+            flex: 0 0 560px;
+            max-width: 560px;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.42);
+            border-radius: 24px;
+            box-shadow: 0 8px 26px rgba(10, 35, 58, 0.08), inset 0 1px 0 rgba(255,255,255,0.65);
+            backdrop-filter: blur(16px) saturate(120%);
+            -webkit-backdrop-filter: blur(16px) saturate(120%);
+            padding: 18px 18px 12px;
+            text-align: center;
+        }
+
+        .review-card h1 {
+            margin: 0 0 14px;
+            font-size: clamp(1.4rem, 2vw, 2rem);
+            color: #1e2d3d;
+            text-shadow: none;
+            letter-spacing: -0.04em;
+        }
+
+        .review-card iframe {
+            display: block;
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border-radius: 18px;
+            border: none;
+            box-shadow: 0 12px 22px rgba(15, 50, 74, 0.15);
+        }
+
+        .review-right {
+            margin-left: auto;
+        }
+
+        .review-full {
+            margin: 0 auto;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .review-full iframe {
+            max-width: 100%;
         }
 
         .scndvd {
-            margin-top: 20px;
+            margin-top: 0;
             font-size: 1em;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 28px auto 0;
+            text-decoration: none;
+            border-radius: 999px;
+            padding: 4px;
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.46);
+            box-shadow: 0 8px 18px rgba(24, 54, 78, 0.08), inset 0 1px 0 rgba(255,255,255,0.82);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .back-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 20px rgba(24, 54, 78, 0.12), inset 0 1px 0 rgba(255,255,255,0.82);
+        }
+
+        .back-button .inner {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 150px;
+            padding: 11px 20px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.13);
+            border: 1px solid rgba(255,255,255,0.26);
+            overflow: hidden;
+        }
+
+        .back-button .inner::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0.02) 35%, rgba(255,255,255,0) 65%);
+            pointer-events: none;
+        }
+
+        .back-button .text {
+            position: relative;
+            z-index: 1;
+            color: #1a2e42;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            font-size: 0.95rem;
         }
     </style>
 

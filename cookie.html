@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Free Cookie!</title>
+    <style>
+        /* Centers everything in a clean fullscreen frame with zero hidden window loops */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: "Arial Black", Gadget, sans-serif;
+            overflow: hidden;
+            user-select: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* The signature rapid-flashing background animation */
+        .flash-active {
+            animation: flashBackground 0.12s infinite steps(1);
+        }
+
+        @keyframes flashBackground {
+            0% { background-color: #000000; color: #ffffff; }
+            50% { background-color: #ffffff; color: #000000; }
+        }
+
+        /* Fixed container layout */
+        #payload {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #text-heading {
+            font-size: 4rem;
+            margin-bottom: 30px;
+        }
+
+        /* Vector rows for the 3 classic flashing smiley faces */
+        .smiley-row {
+            display: flex;
+            gap: 40px;
+        }
+
+        .smiley {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 10px solid currentColor;
+            position: relative;
+        }
+
+        /* Eyes */
+        .smiley::before {
+            content: '';
+            position: absolute;
+            top: 28px;
+            left: 24px;
+            width: 12px;
+            height: 18px;
+            background: currentColor;
+            border-radius: 50%;
+            box-shadow: 32px 0 currentColor;
+        }
+
+        /* Wide cartoon smile */
+        .smiley::after {
+            content: '';
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            width: 50px;
+            height: 25px;
+            border: 8px solid currentColor;
+            border-top: 0;
+            border-radius: 0 0 60px 60px;
+        }
+
+        /* Click overlay with your custom joke bait text */
+        #start-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #000000;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            z-index: 9999;
+            cursor: pointer;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- This overlay catches the click to trigger the joke payload inside the tab -->
+    <div id="start-overlay">CLICK HERE FOR A COOKIE (TOTALLY REAL AND NOT A VIRUS)</div>
+
+    <div id="payload">
+        <div id="text-heading">
+            YOU ARE AN IDIOT!<br>
+            <span style="font-size: 2.5rem;">ha-ha-ha-ha-ha-ha-ha!</span>
+        </div>
+        <div class="smiley-row">
+            <div class="smiley"></div>
+            <div class="smiley"></div>
+            <div class="smiley"></div>
+        </div>
+    </div>
+    
+    <!-- Permanent direct audio mirror hosted via the Internet Archive -->
+    <audio id="loop-track" loop src="https://archive.org"></audio>
+
+    <script>
+        const startOverlay = document.getElementById('start-overlay');
+        const loopTrack = document.getElementById('loop-track');
+
+        // Activates flashing loop and playhead safely inside the tab context
+        window.addEventListener('click', () => {
+            if (startOverlay) {
+                startOverlay.remove(); 
+                document.body.classList.add('flash-active'); 
+                
+                // Force audio start bypass
+                loopTrack.muted = false;
+                loopTrack.play().catch(err => {
+                    console.log("Audio pipeline failed to hook stream: ", err);
+                }); 
+            }
+        });
+    </script>
+</body>
+</html>
