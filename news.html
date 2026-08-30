@@ -15,170 +15,82 @@
 </head>
 <body class="site-page">
     <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
+        body.site-page {
+            box-sizing: border-box;
+            min-height: 100vh;
             margin: 0;
-            padding: 0;
-            
-
-            margin-bottom: 100%;
-
-            
-    background-image: url('Untitled%20design.png'); 
-    
-    background-repeat: no-repeat; 
-    
-    background-size: cover; 
-    
-    background-position: center; 
-    
-    background-attachment: fixed; 
-
-
-        }
-
-        .welcome {
+            padding: clamp(1rem, 4vw, 3rem);
+            color: #edf9ff;
             font-family: 'Montserrat', sans-serif;
-            text-align: center;
-            margin-top: 3.281723722719%;   
-            font-size: 3em;
-            color: rgb(5, 64, 143)
+            background:
+              radial-gradient(circle at top, rgba(117, 178, 226, 0.3), transparent 38%),
+              linear-gradient(180deg, #0a1721 0%, #102534 30%, #183244 100%);
         }
 
-        .best-news {
-            font-family: 'Montserrat', sans-serif;
+        h1 {
+            font-size: clamp(2.2rem, 4vw, 4rem);
             text-align: center;
-            margin-top: 2.81723722719%;
-            font-size: 1.68em;
-            color: rgb(5, 64, 143)
+            color: #edf9ff;
+            text-shadow: none;
+            margin-bottom: 30px;
+            letter-spacing: -0.04em;
         }
 
-        .best-guides {
-            font-family: 'Montserrat', sans-serif;
+        p {
             text-align: center;
-            margin-top: 2.81723722719%;
-            font-size: 1.68em;
-            color: rgb(5, 64, 143)
+            color: #edf9ff;
+            font-size: 1.1rem;
         }
 
-        .best-reviews {
-            font-family: 'Montserrat', sans-serif;
-            text-align: center;
-            margin-top: 2.81723722719%;
-            font-size: 1.68em;
-            color: rgb(5, 64, 143)
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 28px auto 0;
+            text-decoration: none;
+            border-radius: 999px;
+            padding: 4px;
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.46);
+            box-shadow: 0 8px 18px rgba(24, 54, 78, 0.08), inset 0 1px 0 rgba(255,255,255,0.82);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .explore {
-            font-family: 'Montserrat', sans-serif;
-            text-align: center;
-            margin-top: 8.81723722719%;
-            font-size: 1.5em;
-            color: rgb(5, 64, 143);
+        .back-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 20px rgba(24, 54, 78, 0.12), inset 0 1px 0 rgba(255,255,255,0.82);
         }
 
-        .guides {
-            color: red;
-            margin-left: 1.3em;
-            text-align: center;
+        .back-button .inner {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 150px;
+            padding: 11px 20px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.13);
+            border: 1px solid rgba(255,255,255,0.26);
+            overflow: hidden;
         }
 
-        .news {
-            color: red;
-            margin-right: 1.3em;
-            text-align: center;
+        .back-button .inner::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0.02) 35%, rgba(255,255,255,0) 65%);
+            pointer-events: none;
         }
 
-        .frutiger-button {
-  cursor: pointer;
-  position: relative;
-  padding: 2px;
-  border-radius: 6px;
-  border: 0;
-  text-shadow: 1px 1px #000a;
-  background: linear-gradient(#006caa, #00c3ff);
-  box-shadow: 0px 4px 6px 0px #0008;
-  transition: 0.3s all;
-}
-
-.frutiger-button:hover {
-  box-shadow: 0px 6px 12px 0px #0009;
-}
-
-.frutiger-button:active {
-  box-shadow: 0px 0px 0px 0px #0000;
-}
-
-.inner {
-  position: relative;
-  inset: 0px;
-  padding: 1em;
-  border-radius: 4px;
-  background: radial-gradient(circle at 50% 100%, #30f8f8 10%, #30f8f800 55%),
-    linear-gradient(#00526a, #009dcd);
-  overflow: hidden;
-  transition: inherit;
-}
-
-.inner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(-65deg, #0000 40%, #fff7 50%, #0000 70%);
-  background-size: 200% 100%;
-  background-repeat: no-repeat;
-  animation: thing 3s ease infinite;
-}
-
-@keyframes thing {
-  0% {
-    background-position: 130%;
-    opacity: 1;
-  }
-
-  to {
-    background-position: -166%;
-    opacity: 0;
-  }
-}
-
-.top-white {
-  position: absolute;
-  border-radius: inherit;
-  inset: 0 -8em;
-  background: radial-gradient(
-    circle at 50% -270%,
-    #fff 45%,
-    #fff6 60%,
-    #fff0 60%
-  );
-  transition: inherit;
-}
-
-.inner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  transition: inherit;
-  box-shadow: inset 0px 2px 8px -2px #0000;
-}
-
-.frutiger-button:active .inner::after {
-  box-shadow: inset 0px 2px 8px -2px #000a;
-}
-
-.text {
-  position: relative;
-  z-index: 1;
-  color: white;
-  font-weight: 550;
-  transition: inherit;
-}
-
-
-
-        </style>
+        .back-button .text {
+            position: relative;
+            z-index: 1;
+            color: #1a2e42;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            font-size: 0.95rem;
+        }
+    </style>
 
 
         <h1 class="welcome">Latest Articles:</h1>
