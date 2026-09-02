@@ -1,4 +1,3 @@
-<!-- 1. Replace the loading text with a real button -->
 <div class="loading-container">
   <h2>Welcome to Tech Hero Login</h2>
   <button id="google-login-btn" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
@@ -23,7 +22,6 @@
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
 
-  // 2. Attach the login flow to the button click event
   document.getElementById("google-login-btn").addEventListener("click", () => {
     signInWithPopup(auth, provider)
       .then((result) => {

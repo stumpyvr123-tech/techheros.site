@@ -101,7 +101,6 @@
 </head>
 <body>
 
-    <!-- This overlay catches the click to trigger the joke payload inside the tab -->
     <div id="start-overlay">CLICK HERE FOR A COOKIE (TOTALLY REAL AND NOT A VIRUS)</div>
 
     <div id="payload">
@@ -116,20 +115,17 @@
         </div>
     </div>
     
-    <!-- Permanent direct audio mirror hosted via the Internet Archive -->
     <audio id="loop-track" loop src="https://archive.org"></audio>
 
     <script>
         const startOverlay = document.getElementById('start-overlay');
         const loopTrack = document.getElementById('loop-track');
 
-        // Activates flashing loop and playhead safely inside the tab context
         window.addEventListener('click', () => {
             if (startOverlay) {
                 startOverlay.remove(); 
                 document.body.classList.add('flash-active'); 
                 
-                // Force audio start bypass
                 loopTrack.muted = false;
                 loopTrack.play().catch(err => {
                     console.log("Audio pipeline failed to hook stream: ", err);

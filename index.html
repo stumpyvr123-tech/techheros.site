@@ -336,7 +336,146 @@
   100% { background-position: -120% 0; }
 }
 
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+}
 
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: linear-gradient(135deg, rgba(10, 23, 33, 0.95), rgba(16, 37, 52, 0.95));
+  border: 1px solid rgba(180, 214, 240, 0.2);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), inset 0 1px rgba(255, 255, 255, 0.1);
+  color: #edf9ff;
+}
+
+.modal-header {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.modal-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(237, 249, 255, 0.9);
+  margin-bottom: 30px;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #75b2e2;
+}
+
+.checkbox-item label {
+  cursor: pointer;
+  font-size: 0.95rem;
+  user-select: none;
+  flex: 1;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.modal-btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.46);
+}
+
+.modal-btn.close-btn {
+  background: rgba(255,255,255,0.15);
+  color: #1a2e42;
+}
+
+.modal-btn.close-btn:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-1px);
+}
+
+.modal-btn.agree-btn {
+  background: rgba(117, 178, 226, 0.3);
+  color: #edf9ff;
+  border: 1px solid rgba(117, 178, 226, 0.5);
+}
+
+.modal-btn.agree-btn:hover:not(:disabled) {
+  background: rgba(117, 178, 226, 0.5);
+  transform: translateY(-1px);
+}
+
+.modal-btn.agree-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.read-tos-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: rgba(117, 178, 226, 0.3);
+  border: 1px solid rgba(117, 178, 226, 0.5);
+  color: #edf9ff;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.read-tos-btn:hover {
+  background: rgba(117, 178, 226, 0.5);
+  transform: translateY(-1px);
+}
 
         </style>
 
@@ -674,7 +813,98 @@
 
 
 
- 
+
         
 </body>
 </html>
+
+<div id="tosModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">Terms of Service</div>
+    <div class="modal-text">
+      <strong>Last Updated: September 1, 2026</strong><br><br>
+      Welcome to Tech Hero. By using our services, you agree to be bound by these Terms of Service. Please read them carefully before proceeding. We reserve the right to update these terms at any time.
+      <br><br>
+      Key points include:
+      <ul>
+        <li>Users must be at least 13 years old to use our services</li>
+        <li>You are responsible for maintaining account security</li>
+        <li>All content is provided "as-is" without warranties</li>
+        <li>We are not liable for any indirect or consequential damages</li>
+        <li>These terms are governed by applicable law</li>
+      </ul>
+      <a href="TOS.html" style="color: #75b2e2; text-decoration: none; font-weight: 700;">→ Read Full Terms of Service</a>
+    </div>
+    
+    <div class="checkbox-group">
+      <div class="checkbox-item">
+        <input type="checkbox" id="checkbox1" value="read">
+        <label for="checkbox1">I have read and understood the Terms of Service</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="checkbox2" value="agree">
+        <label for="checkbox2">I agree to be bound by these Terms of Service</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="checkbox3" value="confirm">
+        <label for="checkbox3">I confirm that I am at least 13 years old</label>
+      </div>
+    </div>
+
+    <div class="modal-buttons">
+      <button class="modal-btn close-btn" id="closeModal">Close</button>
+      <button class="modal-btn agree-btn" id="agreeBtn" disabled>I Agree & Accept</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const tosModal = document.getElementById('tosModal');
+  const closeModal = document.getElementById('closeModal');
+  const agreeBtn = document.getElementById('agreeBtn');
+  const checkbox1 = document.getElementById('checkbox1');
+  const checkbox2 = document.getElementById('checkbox2');
+  const checkbox3 = document.getElementById('checkbox3');
+  const consentKey = 'techHeroTosAccepted';
+
+  function showConsentModalIfNeeded() {
+    const hasAcceptedTerms = localStorage.getItem(consentKey) === 'true';
+    if (!hasAcceptedTerms) {
+      tosModal.classList.add('show');
+    }
+  }
+
+  closeModal.addEventListener('click', () => {
+    tosModal.classList.remove('show');
+  });
+
+  window.addEventListener('click', (event) => {
+    if (event.target === tosModal) {
+      tosModal.classList.remove('show');
+    }
+  });
+
+  function updateAgreeButton() {
+    if (checkbox1.checked && checkbox2.checked && checkbox3.checked) {
+      agreeBtn.disabled = false;
+    } else {
+      agreeBtn.disabled = true;
+    }
+  }
+
+  checkbox1.addEventListener('change', updateAgreeButton);
+  checkbox2.addEventListener('change', updateAgreeButton);
+  checkbox3.addEventListener('change', updateAgreeButton);
+
+  agreeBtn.addEventListener('click', () => {
+    localStorage.setItem(consentKey, 'true');
+    alert('Thank you!');
+    tosModal.classList.remove('show');
+    checkbox1.checked = false;
+    checkbox2.checked = false;
+    checkbox3.checked = false;
+    updateAgreeButton();
+  });
+
+  showConsentModalIfNeeded();
+</script>
