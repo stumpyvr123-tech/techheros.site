@@ -10,6 +10,10 @@
 </head>
 <body class="site-page">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body.site-page {
             box-sizing: border-box;
             min-height: 100vh;
@@ -22,19 +26,39 @@
               linear-gradient(180deg, #0a1721 0%, #102534 30%, #183244 100%);
         }
 
-        h1 {
+        .page-shell {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 40px 24px 60px;
+        }
+
+        .page-title {
             font-size: clamp(2.2rem, 4vw, 4rem);
             text-align: center;
             color: #edf9ff;
             text-shadow: none;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
             letter-spacing: -0.04em;
         }
 
-        p {
+        .feature-guide {
+            display: block;
+            max-width: 1100px;
+            margin: 0 auto;
             text-align: center;
             color: #edf9ff;
-            font-size: 1.1rem;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 8px;
+            font-size: clamp(1.6rem, 3vw, 3rem);
+            line-height: 1.3;
+            font-weight: 700;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .feature-guide:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
         }
 
         .back-button {
@@ -86,8 +110,17 @@
             font-size: 0.95rem;
         }
     </style>
-    <h1>Tech Guides</h1>
-    <p>Guides coming soon.</p>
-    <a class="frutiger-button back-button" href="index.html"><div class="inner"><span class="text">Back to home</span></div></a>
+
+    <div class="page-shell">
+        <h1 class="page-title">Tech Guides</h1>
+
+        <a class="feature-guide" href="https://xidax.com/blogs/news/build-your-own-gaming-pc-a-beginners-guide?srsltid=AfmBOoogtCvNcABPwySE1YWI8PnXuPExE-vg-vOcJX_4liyPeKKP3gb6" target="_blank" rel="noreferrer">
+            Build Your Own Gaming PC: A Beginner's Guide
+        </a>
+    </div>
+
+    <a class="frutiger-button back-button" href="index.html">
+        <div class="inner"><span class="text">Back to home</span></div>
+    </a>
 </body>
 </html>
